@@ -96,5 +96,4 @@ class OCSettingsLogTest {
         )
         Intents.release()
     }
-
 }
