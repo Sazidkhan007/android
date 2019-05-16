@@ -54,8 +54,6 @@ class OCSettingsLogTest {
     @JvmField
     val activityRule = ActivityTestRule(LogHistoryActivity::class.java, true, true)
 
-    val errorMessage = "Activity not finished"
-
     @Before
     fun setUp() {}
 
@@ -72,13 +70,13 @@ class OCSettingsLogTest {
     }
 
     @Test
-    fun historyButtons(){
+    fun logHistoryButtons(){
         onView(withId(R.id.deleteLogHistoryButton)).check(matches(isDisplayed()))
         onView(withId(R.id.sendLogHistoryButton)).check(matches(isDisplayed()))
     }
 
     @Test
-    fun sendHistory(){
+    fun sendLogHistory(){
         Intents.init()
         val intentResult = Instrumentation.ActivityResult(Activity.RESULT_OK, Intent())
         intending(hasAction(Intent.ACTION_SEND_MULTIPLE)).respondWith(intentResult);
